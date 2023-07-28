@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .store
+        {
+            border: 1px solid black;
+            padding: 20px;
+            margin-right: 20px;
+        }
+        .box
+        {
+            border: 1px solid black;
+            padding: 20px;
+            margin: auto;
+        }
+        button
+        {
+            padding: 10px 20px;
+            margin-left: 50px;
+        }
+        input
+        {
+            padding: 10px 20px;
+        }
+        h1
+        {
+            margin-left: 580px;
+        }
+    </style>
+<body>
+    <h1>ToDo List...........(.^.)</h1>
+    <div style="display: flex;" class="main">
+        <div class="box">
+            <input type="text" placeholder="Name" class="name"/><br><br>
+            <input type="text" placeholder="UseName" class="user"/><br><br>
+            <button class="display">Display</button><br><br>
+            <button class="delete">Delete</button><br>
+            <h2>Display And Delete ...Data</h2>
+            <div class="store">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let display=document.querySelector(".display");
+    let del=document.querySelector(".delete");
+    let store=document.querySelector(".store");
+    display.onclick=function()
+    {
+        let div=document.createElement("div");
+        let name=document.querySelector(".name").value;
+        let div1=document.createElement("div");
+        let user=document.querySelector(".user").value;
+        let div2=document.createElement("div");
+        div1.append("Name      :"+name);
+        div2.append("User Name :"+user);
+        div.append(div1,div2);
+        store.append(div);
+    }
+    del.onclick=function()
+    {
+        store.innerHTML="";
+    }
+
+</script>
+</html>
