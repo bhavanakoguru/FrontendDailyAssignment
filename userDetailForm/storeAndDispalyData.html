@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .styling
+        {
+            border: 1px solid black;
+            margin: auto;
+            margin-top: 100px;
+            padding: 50px;
+        }
+        input
+        {
+            padding: 10px;
+        }
+        button
+        {
+            margin-left: 50px;
+            padding: 10px 20px;
+
+        }
+        h1
+        {
+            margin-left: 580px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Detail Form..(.^.)</h1>
+    <div style="display: flex;">
+    <div class="styling">
+        <input type="text" placeholder="Enter Your Name" class="name"/><br><br>
+        <input type="number" placeholder="Enter Your Age" class="age"/><br><br>
+        <input type="number" placeholder="mobile number" class="number"/><br><br>
+        <button class="btn">Sumbit</button>
+    </div>
+</div>
+    
+</body>
+<script>
+    let name=document.querySelector(".name").value;
+    let age=document.querySelector(".age").value;
+    let number=document.querySelector(".number").value;
+    let btn=document.querySelector(".btn");
+
+    btn.onclick=function()
+    {
+        let name=document.querySelector(".name").value;
+        let age=document.querySelector(".age").value;
+        let number=document.querySelector(".number").value;
+        let array=[];
+        let obj={
+            Name:name,
+            Age:age,
+            Number:number
+        }
+        array.push(obj);
+        localStorage.setItem("detailForm",JSON.stringify(array));
+        window.location.href="displayForm.html";
+        
+    }
+</script>
+</html>
