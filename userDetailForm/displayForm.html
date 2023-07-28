@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .store
+        {
+            border: 1px solid black;
+            padding: 20px;
+            margin: auto;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <div class="store">
+
+        </div>
+    </div>
+    </body>
+<script>
+    let store=document.querySelector(".store");
+    let res=JSON.parse(localStorage.getItem("detailForm"));
+    // console.log(res[0].Name);
+    for(let i=0;i<res.length;i++)
+    {
+        let div=document.createElement("div");
+        let nm=document.createElement("div");
+        nm.innerHTML="Your Name          :"+res[i].Name;
+        let ag=document.createElement("div");
+        ag.innerHTML="Your Name          :"+res[i].Age;
+        let num=document.createElement("div");
+        num.innerHTML="Your Mobile Number:"+res[i].Number;
+        div.append(nm,ag,num);
+        store.append(div);
+    }
+
+</script>
+</html>
